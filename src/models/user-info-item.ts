@@ -4,7 +4,7 @@ interface UserInfoItem {
     biography?: string;
     description?: string;
     name?: string;
-    networks?: UserNetworks;
+    networks: UserNetworks;
     userPhoto?: string;
 }
 

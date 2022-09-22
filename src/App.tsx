@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.scss'
 import Card from './components/Card/Card';
 import { UserInfoItem } from './models/user-info-item';
@@ -6,45 +6,49 @@ import { UserInfoItem } from './models/user-info-item';
 const App = () => {
 
 
-  /*- General properties -*/
+  /*--- General properties ---*/
   const urlPersonInfos = './data/UserProfileMockup.json';
-  /*----------------------*/
+  /*--------------------------*/
 
 
 
 
-  /*- States -*/
-  const [userInfos, setUserInfo] = useState<UserInfoItem>({});
-  /*----------*/
+  /*--- States ---*/
+  const [userInfos, setUserInfo] = useState<UserInfoItem>();
+  /*--------------*/
 
 
 
 
-  /*- Function -*/
+  /*--- Function ---*/
   const getUserInfos = async () => {
     let userInfosJson = await fetch(urlPersonInfos);
     setUserInfo(await userInfosJson.json());
     console.log(userInfos);
   }
-  /*------------*/
-
-
-
-
-  /*- Init Actions -*/
-  getUserInfos();
   /*----------------*/
 
 
 
-  /*- Render -*/
+
+  /*--- Init Actions ---*/
+  useEffect(() => {
+    console.log(userInfos);
+    if(!userInfos) getUserInfos();
+  }, [])
+  
+  /*--------------------*/
+
+
+
+  /*--- Render ---*/
   return (
     <div className="PrincipalContainer">
 
       <main className='CardsContainer'>
 
-        <Card {...userInfos} />
-      
+        <Card {...userInfos as UserInfoItem} />
+
       </main>
 
     </div>

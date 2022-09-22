@@ -1,9 +1,15 @@
 interface UserNetworks {
-    instagram: string;
+    email: string;
     facebook: string;
+    instagram: string;
     linkedin: string;
     twitter: string,
-    email: string;
+    whatsapp: string;
 }
 
-export type {UserNetworks}
+interface UserNetworksItem {
+    title: string;
+    link: string;
+}
+
+export type {UserNetworks, UserNetworksItem}
