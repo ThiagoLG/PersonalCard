@@ -1,0 +1,32 @@
+$user-photo-size: 190px;
+.CardItem {
+    .UserPhoto {
+        width: $user-photo-size;
+        border-radius: 50%;
+    }
+    //.PrincipalInfos {}
+    .UserNetworks {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 20px 0;
+        background: #b7b7b79c;
+        padding: 20px;
+        border-radius: 8px;
+        position: relative;
+        border: 1px solid #a4a4a4;
+        &:before {
+            content: "Social Links";
+            position: absolute;
+            top: -15px;
+            left: 9px;
+            background: white;
+            color: black;
+            padding: 0 10px;
+            border-radius: 10px;
+            height: 24px;
+            font-size: 14px;
+            border: 1px solid #a4a4a4;
+        }
+    }
+    //.UserAdditionalDescription {}
+}

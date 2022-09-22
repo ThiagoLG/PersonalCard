@@ -1,0 +1,16 @@
+$logo-size: 30px;
+.NetworkItem {
+    height: $logo-size;
+    a {
+        .NetworkIcon {
+            width: $logo-size;
+            height: $logo-size;
+            transition: 120ms;
+            &:hover {
+                transform: scale(1.3);
+                filter: drop-shadow(1px 4px 4px #aeaeae);
+                color: #aeaeae;
+            }
+        }
+    }
+}
