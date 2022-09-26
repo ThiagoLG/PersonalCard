@@ -10,11 +10,11 @@ body {
 }
 
 .PrincipalContainer {
-    background: url("./background2.jpg");
+    background: url("./background2.jpg"), url('../background2.jpg');
     background-size: cover;
     height: 100%;
     padding: 40px;
-    box-sizing: border-box;
+
     .CardsContainer {
         max-width: 400px;
         margin: auto;
@@ -32,6 +32,7 @@ body {
     from {
         transform: rotate(0deg);
     }
+
     to {
         transform: rotate(360deg);
     }
